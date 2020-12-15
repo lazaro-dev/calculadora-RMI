@@ -11,6 +11,30 @@ public class CalculadoraImpl extends UnicastRemoteObject implements Calculadora 
         super();
     }
     public String calcular(String num1, String num2, String op) {
-        return "HelloWorld!";
+    	switch (op) {
+			case "*":
+				return "" + (Double.parseDouble(num1) * Double.parseDouble(num2));
+				
+			case "/":
+				return "" + (Double.parseDouble(num1) / Double.parseDouble(num2));
+				
+			case "+":
+				return "" + (Double.parseDouble(num1) + Double.parseDouble(num2));
+				
+			case "-":
+				return "" + (Double.parseDouble(num1) - Double.parseDouble(num2));
+			case "%":  			
+	  			return "" + (Double.parseDouble(num1) * (Double.parseDouble(num2)/100.00) )+"%";
+	  			
+	  		case "#":	  			
+	  			return "" + Math.pow(Double.parseDouble(num1), Double.parseDouble(num2));
+	  			
+	  		case "r":  			
+	  			return "" + Math.pow(Double.parseDouble(num1), (1/Double.parseDouble(num2)) );
+	
+			default:				
+				return "";					
+		}
+	    	
     }
 }
